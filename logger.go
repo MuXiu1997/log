@@ -13,6 +13,7 @@ var (
 	once   sync.Once
 )
 
+//Init initializes the global logger instance
 func Init(options ...Option) error {
 	logger = logrus.New()
 	for _, option := range options {
@@ -23,6 +24,7 @@ func Init(options ...Option) error {
 	return nil
 }
 
+//Logger gets the global logger instance
 func Logger() *logrus.Logger {
 	once.Do(func() {
 		if logger == nil {

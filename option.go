@@ -21,6 +21,7 @@ func (f OptionFunc) apply(l *logrus.Logger) error {
 	return f(l)
 }
 
+//StandardOption
 func StandardOption(env string) Option {
 	return OptionFunc(func(l *logrus.Logger) error {
 		switch env {
@@ -47,6 +48,7 @@ func StandardOption(env string) Option {
 	})
 }
 
+//WriteToFileOption
 func WriteToFileOption(dir string) Option {
 	return OptionFunc(func(l *logrus.Logger) error {
 		writer, err := rotatelogs.New(

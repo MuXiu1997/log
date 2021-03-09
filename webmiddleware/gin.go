@@ -8,6 +8,7 @@ import (
 	"github.com/muxiu1997/log"
 )
 
+//GinLogger log middleware for gin
 func GinLogger() gin.HandlerFunc {
 	gin.Logger()
 	return func(c *gin.Context) {
